@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Hex</title>
 
-  <!-- Pixel / monospace feel -->
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
   <style>
@@ -18,10 +17,8 @@
       --accent: #2f8bd6;
     }
 
-    /* full dark page */
     html,body{height:100%; margin:0; background:var(--bg); font-family: 'VT323', monospace; color:var(--text);}
 
-    /* center the terminal window */
     .term-wrap{
       min-height:100%;
       display:flex;
@@ -31,7 +28,6 @@
       box-sizing:border-box;
     }
 
-    /* the "window" */
     .terminal {
       width:820px;
       max-width:95%;
@@ -42,7 +38,6 @@
       border:1px solid rgba(255,255,255,0.03);
     }
 
-    /* title bar */
     .term-header{
       display:flex;
       align-items:center;
@@ -58,10 +53,8 @@
     .dot.yellow{background:#d6b02b}
     .dot.green{background:#2fbf58}
 
-    /* content area layout */
     .term-body{display:flex; gap:18px; padding:24px;}
 
-    /* left: buttons column */
     .term-nav{
       width:160px;
       min-height:220px;
@@ -86,7 +79,6 @@
       box-shadow: 0 4px 10px rgba(47,139,214,0.06) inset;
     }
 
-    /* right: display area */
     .term-panel{
       flex:1;
       background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
@@ -98,7 +90,6 @@
     }
     .muted { color:var(--muted); font-size:13px; margin-bottom:10px; display:block; }
 
-    /* small responsive tweaks */
     @media (max-width:640px){
       .term-body{flex-direction:column;}
       .term-nav{width:100%; flex-direction:row; flex-wrap:wrap;}
@@ -136,7 +127,7 @@
           </div>
           <div id="projects" class="section" style="display:none;">
             • HexTemplate — Basic Modding Template for Gtag<br>
-            • And more coming ;)  <br>
+            • More coming.   <br>
             
           </div>
           <div id="contact" class="section" style="display:none;">
@@ -151,14 +142,12 @@
   </div>
 
   <script>
-    // small JS to switch content & active button
     const buttons = document.querySelectorAll('.btn');
     const sections = document.querySelectorAll('.section');
 
     function show(name){
       sections.forEach(s => s.style.display = (s.id === name) ? '' : 'none');
       buttons.forEach(b => b.classList.toggle('active', b.dataset.target === name));
-      // update prompt line or focus if desired
       document.querySelector('.muted').textContent = 'C:\\Users\\hex> ' + name;
     }
 
@@ -166,7 +155,6 @@
       b.addEventListener('click', () => show(b.dataset.target));
     });
 
-    // optional: start on about
     show('about');
   </script>
 </body>
