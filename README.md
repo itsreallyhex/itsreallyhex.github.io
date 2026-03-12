@@ -1,2 +1,2 @@
 
-## [Elhexo.github.io ](https://itsreallyhex.github.io/)
+## [Website](https://itsreallyhex.github.io/)
